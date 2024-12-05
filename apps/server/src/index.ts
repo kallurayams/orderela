@@ -1,10 +1,9 @@
 require("dotenv").config();
 import express from "express";
-const app = express();
+import routes from "./routes/index";
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+const app = express();
+app.use(routes);
 
 app.listen(process.env.PORT, () => {
   console.log(
